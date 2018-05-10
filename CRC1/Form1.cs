@@ -20,7 +20,7 @@ namespace CRC1
         private void btnKliko_Click(object sender, EventArgs e)
         {
             String vlera = konverto(txtTeksti.Text);
-            String vlera1 = konverto(txtTeksti.Text) + "0000000000000000";
+            String vlera1 = konverto(txtTeksti.Text) + "000000000000000";
             String vlera2 = "";
             String vlera3 = "";
             String vlera4 = "";
@@ -30,14 +30,14 @@ namespace CRC1
             char[] char2 = { };
             char[] char3 = { };
             char[] char4 = { };
-            char[] divisor = { '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1' };
+            char[] divisor = { '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1' };
 
 
             
           
             int y = 0;
             int n = vlera1.Length;
-            for (int j = 0; j <vlera1.Length-18; j++)
+            for (int j = 0; j <vlera1.Length-17; j++)
             {
                 if (j == 0)
                 {
@@ -75,12 +75,12 @@ namespace CRC1
                    
                 }
 
-                if (vlera2.Length < 17)
+                if (vlera2.Length < 16)
                 {
                     break;
                 }
                 
-                    vlera3 = vlera2.Substring(0, 17);
+                    vlera3 = vlera2.Substring(0, 16);
                      char3 = vlera3.ToCharArray();
                     
 
@@ -97,7 +97,7 @@ namespace CRC1
                         }
                     }
 
-              char4 = (vlera1.Substring(17+y , vlera1.Length - 17-y)).ToCharArray();
+              char4 = (vlera1.Substring(16+y , vlera1.Length - 16-y)).ToCharArray();
 
                 vlera4 = new String(char3);
                 vlera5 = new String(char4);
@@ -108,8 +108,8 @@ namespace CRC1
             }
            
 
-            String vlera7= vlera + vlera6.Substring(vlera6.Length -16, 16);
-            txtCRC.Text = vlera6.Substring(vlera6.Length - 16, 16);
+            String vlera7= vlera + vlera6.Substring(vlera6.Length -15, 15);
+            txtCRC.Text = vlera6.Substring(vlera6.Length - 15, 15);
             txtRezultati.Text =vlera7;
 
         }
@@ -144,13 +144,13 @@ namespace CRC1
             char[] char2 = { };
             char[] char3 = { };
             char[] char4 = { };
-            char[] divisor = { '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '0', '1' };
+            char[] divisor = { '1', '1', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '0', '1', '1' };
 
             int y = 0;
             int n = vlera1.Length;
             
             
-            for (int j = 0; j <vlera1.Length-18; j++)
+            for (int j = 0; j <vlera1.Length-17; j++)
             {
                 if (j == 0)
                 {
@@ -191,14 +191,14 @@ namespace CRC1
 
                 }
                 
-                if (vlera2.Length < 17)
+                if (vlera2.Length < 16)
                 {
                     break;
                 }
 
 
 
-                vlera3 = vlera2.Substring(0, 17);
+                vlera3 = vlera2.Substring(0, 16);
                 char3 = vlera3.ToCharArray();
                 int m = vlera2.Length;
 
@@ -215,7 +215,7 @@ namespace CRC1
                     }
                 }
 
-                 char4 = (vlera1.Substring(17+y, vlera1.Length-17-y)).ToCharArray();
+                 char4 = (vlera1.Substring(16+y, vlera1.Length-16-y)).ToCharArray();
 
                 vlera4 = new String(char3);
                 vlera5 = new String(char4);
